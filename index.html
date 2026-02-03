@@ -16,6 +16,17 @@
 
   <div id="lista"></div>
 </div>
+<script>
+function enviarCorreo() {
+  const texto = document.getElementById("mensaje").value;
+  const correo = "leo.1982.63.973@gmail.com";
+
+  window.location.href =
+    "mailto:" + correo +
+    "?subject=Mensaje desde la página" +
+    "&body=" + encodeURIComponent(texto);
+}
+</script>
 
 <body>
 
@@ -69,4 +80,13 @@
   <button onclick="agregar()">Enviar</button>
 
   <div id="lista"></div>
+</div>
+<div class="pantalla" id="extra">
+  <h1 class="titulo">Sugerencias 💌</h1>
+
+  <textarea id="mensaje" placeholder="Escribe aquí tu pregunta..."></textarea>
+
+  <a id="enviar" href="mailto:leo.1982.63.973@gmail.com?subject=Pregunta desde la web">
+    <button>Enviar</button>
+  </a>
 </div>

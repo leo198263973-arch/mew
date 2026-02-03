@@ -123,3 +123,12 @@ button:active {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
+textarea {
+  width: 90%;
+  height: 120px;
+  border-radius: 14px;
+  padding: 14px;
+  font-size: 18px;
+  border: none;
+  margin-bottom: 16px;
+}
