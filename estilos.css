@@ -1,3 +1,19 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.container {
+  min-height: 100vh;
+  padding: 1.5rem 1rem;
+}
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
 * {
   margin: 0;
   padding: 0;
