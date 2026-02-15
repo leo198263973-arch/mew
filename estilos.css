@@ -23,19 +23,16 @@ body {
 .pantalla {
   position: absolute;
   inset: 0;
-
   padding-top: 60px;
-  padding-bottom: 170px; /* espacio real para botones */
-
-  text-align: center;
-
+  padding-bottom: 160px;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  text-align: center;
 
   opacity: 0;
   transform: translateY(30px);
   pointer-events: none;
-  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .pantalla.activa {
@@ -57,44 +54,32 @@ body {
   animation: aparecer 1s ease forwards;
 }
 
-/* descoordinación leve */
-.texto:nth-child(2) { animation-delay: 0.2s; }
-.texto:nth-child(3) { animation-delay: 0.4s; }
-.texto:nth-child(4) { animation-delay: 0.6s; }
-.texto:nth-child(5) { animation-delay: 0.8s; }
-
 /* BOTONERA */
 .botonera {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-
   padding: 14px 10px;
   display: flex;
   justify-content: space-around;
   gap: 8px;
-
   background: rgba(140, 60, 180, 0.95);
   backdrop-filter: blur(10px);
-
   z-index: 1000;
 }
 
 /* BOTONES */
 button {
   flex: 1;
-
   background: linear-gradient(135deg, #c02eff, #5a0075);
   border: none;
   border-radius: 18px;
   padding: 12px 10px;
-
   font-size: 16px;
   color: white;
   font-family: inherit;
   cursor: pointer;
-
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -107,22 +92,7 @@ button:active {
   transform: scale(0.95);
 }
 
-/* ANIMACIONES */
-@keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes flotar {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
+/* FORM */
 textarea {
   width: 90%;
   height: 120px;
@@ -131,4 +101,49 @@ textarea {
   font-size: 18px;
   border: none;
   margin-bottom: 16px;
+}
+
+/* MENSAJE EXITO */
+#mensaje-exito {
+  display: none;
+  font-size: 1.4em;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(6px);
+}
+
+/* RESPUESTAS */
+.respuestas {
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.respuesta {
+  background: rgba(255,255,255,0.15);
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+.pregunta {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.respuesta-texto {
+  font-size: 24px;
+  margin-top: 8px;
+}
+
+/* ANIMACIONES */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
