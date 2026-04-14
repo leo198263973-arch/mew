@@ -103,7 +103,7 @@ textarea {
   margin-bottom: 16px;
 }
 
-/* MENSAJE EXITO */
+/* MENSAJE ÉXITO */
 #mensaje-exito {
   display: none;
   font-size: 1.4em;
@@ -112,6 +112,17 @@ textarea {
   border-radius: 18px;
   background: rgba(255,255,255,0.25);
   backdrop-filter: blur(6px);
+
+  /* animación */
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.5s ease;
+}
+
+#mensaje-exito.mostrar {
+  display: block;
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 /* RESPUESTAS */
@@ -146,4 +157,31 @@ textarea {
 @keyframes flotar {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
+}
+#brillos {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.brillo {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: subir 1s ease-out forwards;
+}
+
+@keyframes subir {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100px) scale(0.5);
+    opacity: 0;
+  }
 }
